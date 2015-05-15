@@ -1,0 +1,20 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.1.0'
+      classpath 'com.github.dcendents:android-maven-plugin:1.2'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        //maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+  // Is Release Build?
+  ext.isReleaseVersion = has("release")
+  ext.versionCodeInt = getProperty('VERSION_CODE').toInteger()
+  version = VERSION_NAME
+}
